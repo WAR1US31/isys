@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages List</title>
+</head>
+<body>
+    <h1>Messages List</h1>
+    <ul>
+    {% for message in messages_list %}
+        <li>
+            <h2>{{ message.title }}</h2>
+            <p>{{ message.text }}</p>
+            <p>{{ message.date_of_execution }}</p>
+        </li>
+    {% empty %}
+        <li>No articles yet.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

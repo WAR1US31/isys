@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.views.generic.list import ListView
 
-# Create your views here.
+from app.models import Messages
+
+
+class MessagesListView(ListView):
+    model = Messages
+
+    def get_queryset(self):
+        return Messages.objects.all()
